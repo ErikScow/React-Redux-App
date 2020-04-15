@@ -1,11 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+
+import { connect } from 'react-redux'
+
+import { getData } from './actions/actions'
 
 import Header from './components/header'
 import BoxContainer from './components/BoxContainer'
 
-function App() {
+const App = props => {
+  useEffect(() => {
+    props.getData()
+  }, [])
   return (
     <div className="App">
       <Header />
@@ -14,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { getData })(App)
