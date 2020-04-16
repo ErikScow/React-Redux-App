@@ -14,14 +14,14 @@ const CountryBox = props => {
             </div>
             <div className='card-bottom'>
                 <div className='card-bottom-container'>
-                    <p><span>New: </span><span>{props.country.cases.new}</span></p>
+                    <p><span>New: </span><span className='red'>{props.country.cases.new}</span></p>
                     <p><span>Active: </span><span>{props.country.cases.active}</span></p>
                     <p><span>Critical: </span><span>{props.country.cases.critical}</span></p>
                     <p><span>Recovered: </span><span>{props.country.cases.recovered}</span></p>
                 </div>
                 <div className='card-bottom-container'>
-                    <p><span>New Deaths: </span><span>{props.country.deaths.new}</span></p>
-                    <p><span>Total Deaths: </span><span>{props.country.deaths.total}</span></p>
+                    <p><span>New Deaths: </span><span className='red'>{props.country.deaths.new}</span></p>
+                    <p><span>Total Deaths: </span><span >{props.country.deaths.total}</span></p>
                 </div>
             </div>
         </div>
