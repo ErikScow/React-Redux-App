@@ -16,7 +16,7 @@ const BoxContainer = props => {
 
 const mapStateToProps = (state) => {
     return{
-        countryData: state.countriesData
+        countryData: state.displayData
     }
 }
 

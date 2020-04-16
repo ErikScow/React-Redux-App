@@ -1,15 +1,18 @@
 import { FETCHING_DATA, 
     RECIEVED_DATA, 
-    RECIEVED_ERROR } from '../actions/actions'
+    RECIEVED_ERROR,
+    NEW_SEARCH } from '../actions/actions'
 
 const initialState = {
     countriesData: [], 
+    displayData: [],
     error: '',
     isFetching: false
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type){
+        //api call
         case FETCHING_DATA:
             return {
                 ...state,
@@ -20,6 +23,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 countriesData: action.payload,
+                displayData: action.payload,
                 isFetching: false,
                 error: ''
             }
@@ -28,6 +32,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: action.payload
+            }
+
+        //filter form
+        case NEW_SEARCH:
+            return {
+                ...state,
+                displayData: state.countriesData.filter(
+                (item) => {
+                    return (item.country.toLowerCase().includes(action.payload.toLowerCase()))
+                })
             }
         default:
             return state

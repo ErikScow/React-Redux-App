@@ -10,3 +10,13 @@ export const getData = () => dispatch => {
         .then(res => dispatch({ type: RECIEVED_DATA, payload: res.data.response}))
         .catch(err => dispatch({ type: RECIEVED_ERROR, payload: err}))
 }
+
+export const NEW_SEARCH = 'NEW_SEARCH'
+
+export const newSearch = term => {
+    console.log(`${term}`)
+    return {
+        type: NEW_SEARCH,
+        payload: term
+    }
+}
