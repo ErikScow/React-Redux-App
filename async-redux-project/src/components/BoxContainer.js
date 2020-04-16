@@ -6,7 +6,7 @@ import CountryBox from './countryBox'
 const BoxContainer = props => {
     console.log(props.countryData)
     return (
-        <div>
+        <div className='container'>
             {props.countryData.map((country, i) => {
                 return <CountryBox key={i} country={country}/>
             })}
