@@ -16,16 +16,51 @@ const FilterForm = props => {
     }, [searchInput])
 
     return (
-        <div>
             <form onSubmit={e=>e.preventDefault()}>
+
                 <input 
                     type='text'
                     name='search'
                     value={searchInput}
                     onChange={handleChange}
                 />
+
+                <div className='radio-input'>
+                    <p className='radio-input-label'>Sort By:</p>
+                    <div>
+                        <input 
+                            type='radio'
+                            id='highest-cases'
+                            name='sort-method'
+                        />
+                        <label htmlFor='highest-cases'>Highest Cases</label>
+                    </div>
+                    <div>
+                        <input 
+                            type='radio'
+                            id='highest-new-cases'
+                            name='sort-method'
+                        />
+                        <label htmlFor='highest-new-cases'>Highest New Cases</label>
+                    </div>
+                    <div>
+                        <input 
+                            type='radio'
+                            id='highest-deaths'
+                            name='sort-method'
+                        />
+                        <label htmlFor='highest-deaths'>Highest Deaths</label>
+                    </div>
+                    <div>
+                        <input 
+                            type='radio'
+                            id='highest-new-deaths'
+                            name='sort-method'
+                        />
+                        <label htmlFor='highest-new-deaths'>Highest New Deaths</label>
+                    </div>
+                </div>
             </form>
-        </div>
     )
 }
 
