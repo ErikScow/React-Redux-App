@@ -1,11 +1,13 @@
 import { FETCHING_DATA, 
     RECIEVED_DATA, 
     RECIEVED_ERROR,
-    NEW_SEARCH } from '../actions/actions'
+    NEW_SEARCH, 
+    SWITCH_SORT} from '../actions/actions'
 
 const initialState = {
     countriesData: [], 
     displayData: [],
+    sortBy: 'default',
     error: '',
     isFetching: false
 }
@@ -41,7 +43,12 @@ const reducer = (state = initialState, action) => {
                 displayData: state.countriesData.filter(
                 (item) => {
                     return (item.country.toLowerCase().includes(action.payload.toLowerCase()))
-                })
+                }),
+            }
+        case SWITCH_SORT:
+            return {
+                ...state,
+                sortBy: action.payload
             }
         default:
             return state
