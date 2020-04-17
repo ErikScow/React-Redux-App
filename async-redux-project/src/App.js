@@ -8,10 +8,10 @@ import { getData } from './actions/actions'
 import Header from './components/header'
 import BoxContainer from './components/BoxContainer'
 
-const App = props => {
+const App = ({ getData }) => {
   useEffect(() => {
-    props.getData()
-  }, [])
+    getData()
+  }, [getData])
   return (
     <div className="App">
       <Header />

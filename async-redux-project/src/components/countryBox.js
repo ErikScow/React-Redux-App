@@ -3,9 +3,11 @@ import React from 'react'
 const CountryBox = props => {
     return (
         <div className='card'>
+            <h3>{props.country.country}</h3>
             <div className='card-top'>
+                
                 <div className='card-top-left'>
-                    <h3>{props.country.country}</h3>
+                    
                     <h4>Cases</h4>
                 </div>
                 <div className='card-top-right'>

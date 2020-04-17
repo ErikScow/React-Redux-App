@@ -3,40 +3,44 @@ import { connect } from 'react-redux'
 
 import CountryBox from './countryBox'
 
-const BoxContainer = props => {
-    console.log(props.countryData)
+const BoxContainer = ({ sortBy, countryData, fetchingData }) => {
 
     const sortData = (data) => {
         return (
-            (props.sortBy === 'highest-cases') ?
+            (sortBy === 'highest-cases') ?
             data.sort((a,b) => b.cases.new - a.cases.new)
             :
-            (props.sortBy === 'highest-new-cases') ?
+            (sortBy === 'highest-new-cases') ?
             data.sort((a,b) => b.cases.new - a.cases.new)
             :
-            (props.sortBy === 'highest-deaths') ?
+            (sortBy === 'highest-deaths') ?
             data.sort((a,b) => b.deaths.total - a.deaths.total)
             :
-            (props.sortBy === 'highest-new-deaths') ?
+            (sortBy === 'highest-new-deaths') ?
             data.sort((a,b) => b.deaths.new - a.deaths.new)
             :
             data
         )
     }
 
-    return (
-        <div className='container'>
-            {sortData(props.countryData).map((country, i) => {
-                return <CountryBox key={i} country={country}/>
-            })}
-        </div>
-    )
+    if (fetchingData === true) {
+        return <><div className='fetching'>Fetching Data</div></>
+    } else {
+        return (
+            <div className='container'>
+                {sortData(countryData).map((country, i) => {
+                    return <CountryBox key={i} country={country}/>
+                })}
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
     return{
         countryData: state.displayData,
-        sortBy: state.sortBy
+        sortBy: state.sortBy,
+        fetchingData: state.isFetching
     }
 }
 

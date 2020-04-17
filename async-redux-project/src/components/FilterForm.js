@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { newSearch, switchSort } from '../actions/actions'
 
-const FilterForm = props => {
+const FilterForm = ({ newSearch, switchSort }) => {
 
     const [searchInput, setSearchInput] = useState('')
 
@@ -12,12 +12,11 @@ const FilterForm = props => {
     }
 
     useEffect(() => {
-        props.newSearch(searchInput)
-    }, [searchInput])
+        newSearch(searchInput)
+    }, [searchInput, newSearch])
 
     const handleClick = e => {
-        console.log(e.target.value)
-        props.switchSort(e.target.value)
+        switchSort(e.target.value)
     }
 
     return (

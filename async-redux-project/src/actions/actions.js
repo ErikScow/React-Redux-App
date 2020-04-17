@@ -23,7 +23,6 @@ export const newSearch = term => {
 export const SWITCH_SORT = 'SWITCH_SORT'
 
 export const switchSort = value => {
-    console.log('from switchSort: ', value)
     return {
         type: SWITCH_SORT,
         payload: value
