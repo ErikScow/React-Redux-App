@@ -1,0 +1,129 @@
+
+body{
+  color:rgba(255, 255, 255, 0.9);
+  background-color: #121212;
+}
+
+.App {
+  text-align: center;
+
+}
+
+.header{
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 400px;
+  padding: 0px 20px 20px 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+  background: rgba(255,255,255,.16);
+}
+
+h1{
+  font-size: 50px;
+}
+
+form{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-input{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.radio-input-label{
+  margin-bottom: 10px;
+}
+
+.fetching{
+  text-align: center;
+  font-size: 50px;
+}
+
+.container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card{
+  box-sizing: border-box;
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.1);
+}
+
+h3{
+  text-align:left;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+
+h4{
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  padding-top:18px;
+  padding-bottom: 12px;
+  font-size: 24px;
+}
+
+.card-top{
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.card-top-left{
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.card-top-right{
+  display:flex;
+  align-items: flex-end;
+
+}
+
+.total-cases{
+  color: rgba(210, 133, 255, 0.603);
+  margin: 0;
+  padding: 0;
+  font-size: 75px;
+}
+
+.card-bottom{
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content: space-between;
+}
+
+.card-bottom-container{
+  width: 45%;
+  display:flex;
+  flex-flow: column nowrap;
+}
+
+p{
+  font-size:18px;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  justify-content: space-between;
+}
+
+.red{
+  color: rgba(255, 88, 88, 0.603)
+}
