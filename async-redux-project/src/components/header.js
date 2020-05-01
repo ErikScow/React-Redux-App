@@ -4,7 +4,7 @@ import FilterForm from './FilterForm'
 const Header = () => {
     return (
         <div className='header'>
-            <h1>Covid-19 Data</h1>
+            <h1>COVID-19 Data</h1>
             <FilterForm />
         </div>
     )
