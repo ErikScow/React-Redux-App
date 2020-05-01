@@ -8,7 +8,7 @@ const BoxContainer = ({ sortBy, countryData, fetchingData }) => {
     const sortData = (data) => {
         return (
             (sortBy === 'highest-cases') ?
-            data.sort((a,b) => b.cases.new - a.cases.new)
+            data.sort((a,b) => b.cases.total - a.cases.total)
             :
             (sortBy === 'highest-new-cases') ?
             data.sort((a,b) => b.cases.new - a.cases.new)
